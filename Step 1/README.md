@@ -25,3 +25,4 @@ However, is main goal is to manage MODULE DEPENDENCIES and is the file NPM uses 
 
 Full information on pacakge.json can be found [here (official npm site)](https://docs.npmjs.com/files/package.json).
 
+## Node Concepts Summary
