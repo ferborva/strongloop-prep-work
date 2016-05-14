@@ -10,6 +10,7 @@ This repo will contain all exercises, summaries and personal notes used/created 
 - [Video Study Collection](https://github.com/Pelirrojo/node-certification-study-guide)
 - [Node For Begginers Study Collection](https://github.com/rockbot/node-for-beginners)
 - [Certification Practical Exercise Workouts](https://github.com/wilk/node-certification)
+- [Risingstack Node Structure Tutorial](https://blog.risingstack.com/tag/tutorial/)
 
 ###### Recommended Books
 
