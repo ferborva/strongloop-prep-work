@@ -40,6 +40,15 @@ In later steps (and individual folders) we will cover Express, Debugging, Cluste
 
 At this point we have a basic understanding of node and are ready to dive into some hands on work. No place seems better to do this than ['The Node School'](http://nodeschool.io/). In the [Step 2 folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/Step%202) you will find the main tutorial course solutions. Well ... my solutions.
 
+### Step 3 - The Process Global Variable
+
+The Strongloop study guide makes a brief comment on what should be studied about the Process Global:
+
+> The process object is a global object and can be accessed from anywhere. For the purposes of the exam you should understand signal events, accessing environmental variables and dealing with child processes.
+> -- <cite>Strongloop Certification Team</cite>
+
+Brief but concise. We will go through some of the main Events, Signals, objects and methods available to the `process` variable and checkout *child processes*.
+
 ## A little on the side
 
 - [High level sytle guide in Javascript](https://gist.github.com/dominictarr/2401787): always open to discussion but definitely makes good points
