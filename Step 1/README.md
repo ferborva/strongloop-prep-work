@@ -26,3 +26,23 @@ However, is main goal is to manage MODULE DEPENDENCIES and is the file NPM uses 
 Full information on pacakge.json can be found [here (official npm site)](https://docs.npmjs.com/files/package.json).
 
 ## Node Concepts Summary
+
+#### Event Loop
+
+Node deals with all the INTERACTIONS on the server, where things have to start, stop and evolve at any given time. The event loop is part of the language, not a library to be accessed and used. It starts and doesn't stop until the last callback is launched. The loop is run under a SINGLE THREAD.
+
+#### Callback management
+
+There are several ways to deal with asynchronicity:
+
+- Nesting: not the most recommend but not wrong per se.
+- Modularizing: breaking down code into functional steps usualy simplifies maintenance and reusability
+- [Async](https://github.com/caolan/async) Module Use: very popular node module to implement asynchronous Javascript patterns
+- Using Promises: there are several modules with which you can implement promises, however [ES6 Promises](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa) are in da house with node
+
+#### ES6 in Node
+
+[Here](http://node.green/) you can checkout the current state of ES6 availability in NodeJS Versions.
+
+#### Event Emitters
+

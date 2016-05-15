@@ -2,6 +2,8 @@
 
 This repo will contain all exercises, summaries and personal notes used/created in preparation for the strongloop certification exam in 2016.
 
+Exam Node Version: v4.4.4 LTS
+
 ###### Handed Firsts Docs
 
 - [Strongloop certification study guide](https://strongloop.com/node-js/certification/scnd-study-guide/#toggle-id-1)
