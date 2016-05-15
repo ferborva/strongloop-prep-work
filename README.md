@@ -45,6 +45,7 @@ At this point we have a basic understanding of node and are ready to dive into s
 The Strongloop study guide makes a brief comment on what should be studied about the Process Global:
 
 > The process object is a global object and can be accessed from anywhere. For the purposes of the exam you should understand signal events, accessing environmental variables and dealing with child processes.
+>
 > -- <cite>Strongloop Certification Team</cite>
 
 Brief but concise. We will go through some of the main Events, Signals, objects and methods available to the `process` variable and checkout *child processes*.
