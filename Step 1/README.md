@@ -107,3 +107,6 @@ writeStream.on('error', function (err) {
 Example available in [playZone folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/Step%201/playZone) as stream-example.js.
 
 Can be run from console with: `node stream-example.js input.txt output.txt`
+
+This example not only shows the long way of writting a readable stream to a writeable stream but also the 'unsafe' way. It is recommended to use [piping](https://nodejs.org/docs/latest-v0.12.x/api/stream.html#stream_readable_pipe_destination_options) for this operation.
+

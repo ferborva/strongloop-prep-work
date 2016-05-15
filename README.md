@@ -25,3 +25,8 @@ Exam Node Version: v4.4.4 LTS
 Link to the [Strongloop certification study guide](https://strongloop.com/node-js/certification/scnd-study-guide/#toggle-id-1). Offers a basic overview of what will be expected and has links to pages of interest.
 
 All summaries and notes made from the contents of this particular link can be found in the folder 'Step 1'. Link to [documents found here](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/Step%201).
+
+
+## A little on the side
+
+- [High level sytle guide in Javascript](https://gist.github.com/dominictarr/2401787): always open to discussion but definitely makes good points
