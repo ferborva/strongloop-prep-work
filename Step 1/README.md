@@ -45,4 +45,3 @@ There are several ways to deal with asynchronicity:
 [Here](http://node.green/) you can checkout the current state of ES6 availability in NodeJS Versions.
 
 #### Event Emitters
-
