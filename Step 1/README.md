@@ -110,3 +110,8 @@ Can be run from console with: `node stream-example.js input.txt output.txt`
 
 This example not only shows the long way of writting a readable stream to a writeable stream but also the 'unsafe' way. It is recommended to use [piping](https://nodejs.org/docs/latest-v0.12.x/api/stream.html#stream_readable_pipe_destination_options) for this operation.
 
+#### Buffers
+
+Buffers are objects used to HANDLE RAW BINARY DATA. Doens't get much simpler than that. There are plenty of [methods available](https://nodejs.org/dist/latest-v4.x/docs/api/buffer.html) to all buffer objects. Check them out!
+
+The most common context in which buffers are seen and used are as the DATA RECEIVED FROM A READABLE STREAM.
