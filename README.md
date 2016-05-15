@@ -4,6 +4,12 @@ This repo will contain all exercises, summaries and personal notes used/created 
 
 Exam Node Version: v4.4.4 LTS
 
+Main Study Areas:
+- Node fundamental innerWorks
+- Using Express Module to create APIs
+- High Performance API Development
+- Debugging
+
 ###### Handed Firsts Docs
 
 - [Strongloop certification study guide](https://strongloop.com/node-js/certification/scnd-study-guide/#toggle-id-1)
