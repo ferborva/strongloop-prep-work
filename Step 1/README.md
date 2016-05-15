@@ -45,3 +45,65 @@ There are several ways to deal with asynchronicity:
 [Here](http://node.green/) you can checkout the current state of ES6 availability in NodeJS Versions.
 
 #### Event Emitters
+
+Essentially we are talking about Events and EventListeners:
+
+- An event is, put veeeery simply, a STRING
+- An eventListener listens for a specific event emission and runs a specific Callback
+
+Example you can run line by line in the node REPL:
+
+```
+var example_emitter = new (require('events').EventEmitter);
+example_emitter.on("test", function () { console.log("test"); });
+example_emitter.on("print", function (message) { console.log(message); });
+example_emitter.emit("test");
+example_emitter.emit("print", "message");
+example_emitter.emit("unhandled");
+```
+
+1. A new 'EventEmitter' object is created using the *events* module (part of Node Core API)
+2. Two listeners are created with the '.on' method and listen for 'test' and 'print' event emissions
+3. Events are emitted
+
+#### Streams
+
+Streams are part of the node construct and a fundamental part of every node implementation. With streams we are able to process information as we receive it (in CHUNKS) instead of having to wait for all the info to come in:
+
+- Streams use events to DEAL WITH DATA as it happens
+- Can be READABLE, WRITEABLE OR BOTH
+	- Readable Streams: emit 'data' events for every CHUNK of data they receive and emit 'end' event to notify there is no more data to be read
+	- Writeable Streams: can be written to using the 'write()' function and closed using the 'end()' function
+	- Readable/Writeable: Combination of both
+	- All Streams: emit 'error' events when errors arise.
+
+Pretty simple example of how streams can be used, in this case to copy a file over to another:
+
+```
+var fs = require('fs');
+console.log(process.argv[2], '->', process.argv[3]);
+
+var readStream = fs.createReadStream(process.argv[2]);
+var writeStream = fs.createWriteStream(process.argv[3]);
+
+readStream.on('data', function (chunk) {
+  writeStream.write(chunk);
+});
+
+readStream.on('end', function () {
+  writeStream.end();
+});
+
+//Some basic error handling
+readStream.on('error', function (err) {
+  console.log("ERROR", err);
+});
+
+writeStream.on('error', function (err) {
+  console.log("ERROR", err);
+});
+```
+
+Example available in [playZone folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/Step%201/playZone) as stream-example.js.
+
+Can be run from console with: `node stream-example.js input.txt output.txt`
