@@ -13,7 +13,7 @@ First tutorial collection. Goes through the very basics:
 - **Make it modular**: same as previous but extracting the 'hard work' to a module. First contact with the module pattern
 - **HTTP Client**: creating an http GET request and logging the response
 - **HTTP Collect**: same as previous but bundling the response chunks
-- **Juggling Async**
+- **Juggling Async**: collecting response from three URLs and printing the in the specified order
 - **Time Server**
 - **HTTP File Server**
 - **HTTP Uppercaserer**
