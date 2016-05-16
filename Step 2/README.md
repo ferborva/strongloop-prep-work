@@ -15,6 +15,6 @@ First tutorial collection. Goes through the very basics:
 - **HTTP Collect**: same as previous but bundling the response chunks
 - **Juggling Async**: collecting response from three URLs and printing the in the specified order
 - **Time Server**: create a TCP server that returns the current date and time in a specific format
-- **HTTP File Server**
+- **HTTP File Server**: create an HTTP server which returns a specified file for every request received
 - **HTTP Uppercaserer**
 - **HTTP JSON API Server**
