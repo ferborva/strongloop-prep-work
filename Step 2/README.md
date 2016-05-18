@@ -17,4 +17,4 @@ First tutorial collection. Goes through the very basics:
 - **Time Server**: create a TCP server that returns the current date and time in a specific format
 - **HTTP File Server**: create an HTTP server which returns a specified file for every request received
 - **HTTP Uppercaserer**: create an HTTP server which returns the BODY received from a POST request as an uppercase string
-- **HTTP JSON API Server**
+- **HTTP JSON API Server**: create an HTTP serve which responds to GET request to specific URLs, returning an ISO formatted date sent as a URL query parameter
