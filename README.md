@@ -38,7 +38,7 @@ In later steps (and individual folders) we will cover Express, Debugging, Cluste
 
 ### Step 2 - Learn Node Basics
 
-At this point we have a basic understanding of node and are ready to dive into some hands on work. No place seems better to do this than ['The Node School'](http://nodeschool.io/). In the [Step 2 folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/step-2) you will find the main tutorial course solutions. Well ... my solutions.
+At this point we have a basic understanding of node and are ready to dive into some hands on work. No place seems better to do this than ['The Node School'](http://nodeschool.io/). In the [Step 2 folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/step-2) you will find the main tutorial course solutions, both mine and the official ones.
 
 ### Step 3 - The Process Global Variable
 
