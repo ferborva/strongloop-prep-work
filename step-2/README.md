@@ -35,3 +35,5 @@ Collection of tutoriales that offers an introduction to the use of ES6 in node p
 - **Destructure**: Nested Object destructuring example
 - **Arrow Function**
 - **Rest and Spread**
+
+For more details on ES6 I recommend reading [Understanding ES6](https://leanpub.com/understandinges6/read).

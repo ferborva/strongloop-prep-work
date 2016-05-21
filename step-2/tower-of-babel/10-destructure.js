@@ -7,6 +7,9 @@
 
 This new syntax is similar to the destructuring in Clojure. It makes it easier to access properties of arrays and objects.
 
+MORE INFO ON DESTRUCTURING:
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment
+
 Let's examine the syntax by using a little example. The most common example is the swapping of the value in two variables:
 
     var foo = 123;
