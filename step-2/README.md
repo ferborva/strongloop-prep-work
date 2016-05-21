@@ -32,6 +32,6 @@ Collection of tutoriales that offers an introduction to the use of ES6 in node p
 - **Computed property**: Define object computed properties with ES6
 - **Iterator for of**: Create an iterator and run over it with the 'For Of' loop
 - **Generator**: Same as previous but using a Generator Function
-- **Destructure**
+- **Destructure**: Nested Object destructuring example
 - **Arrow Function**
 - **Rest and Spread**
