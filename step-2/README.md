@@ -31,7 +31,7 @@ Collection of tutoriales that offers an introduction to the use of ES6 in node p
 - **Block scope**: Understanding with simple examples the use of 'let' and 'const' variable declarations
 - **Computed property**: Define object computed properties with ES6
 - **Iterator for of**: Create an iterator and run over it with the 'For Of' loop
-- **Generator**
+- **Generator**: Same as previous but using a Generator Function
 - **Destructure**
 - **Arrow Function**
 - **Rest and Spread**
