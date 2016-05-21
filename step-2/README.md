@@ -45,8 +45,8 @@ For an indepth study on ES6 I recommend reading [Understanding ES6](https://lean
 >
 >In this workshop, we will discover it's not black magic after all; No hand waving is required to explain these language features, in fact you've been using them all along without realising.
 
-- **Scopes**
-- **Scope Chains**
+- **Scopes**: Extreeeeemely basic example of lexical scope
+- **Scope Chains**: Same as previous but includes a nested lexical scope (has info on scopes, both lexical and block, and gives examples of nesting)
 - **Global Scope & Shadowing**
 - **Closures**
 - **Garbage Collection**
