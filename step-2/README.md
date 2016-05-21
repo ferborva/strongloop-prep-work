@@ -33,7 +33,7 @@ Collection of tutoriales that offers an introduction to the use of ES6 in node p
 - **Iterator for of**: Create an iterator and run over it with the 'For Of' loop
 - **Generator**: Same as previous but using a Generator Function
 - **Destructure**: Nested Object destructuring example
-- **Arrow Function**
-- **Rest and Spread**
+- **Arrow Function**: Use arrow functions (very little info about them though) in a functional exercise that uses 'map' and 'reduce'
+- **Rest and Spread**: 
 
-For more details on ES6 I recommend reading [Understanding ES6](https://leanpub.com/understandinges6/read).
+For an indepth study on ES6 I recommend reading [Understanding ES6](https://leanpub.com/understandinges6/read).
