@@ -23,7 +23,7 @@ First tutorial collection. Goes through the very basics:
 ###### Tower Of Babel
 
 Collection of tutoriales that offers an introduction to the use of ES6 in node programming:
-- **Babel Setup**
+- **Babel Setup**: basic instalation of babel-cli and use of an ES6 template string
 - **Class**
 - **Class Extend**
 - **Modules with name**
