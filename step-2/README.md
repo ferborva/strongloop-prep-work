@@ -27,7 +27,7 @@ Collection of tutoriales that offers an introduction to the use of ES6 in node p
 - **Class**: Create a class the ES6 way
 - **Class Extend**: Create a class and another extending from the previous the ES6 way
 - **Modules with name**: Create modules with 'import' and 'export' keywords
-- **Modules default export**
+- **Modules default export**: Same as previous buy using the 'export default' keywords, easing importing for developers
 - **Block scope**
 - **Computed property**
 - **Iterator for of**
