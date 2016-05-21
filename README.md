@@ -30,7 +30,7 @@ Main Study Areas:
 
 This is the link to the [Strongloop certification study guide](https://strongloop.com/node-js/certification/scnd-study-guide/#toggle-id-1). Offers a basic overview of what will be expected and has links to pages of interest.
 
-Summaries and notes made from the general contents of this particular link can be found in the folder 'Step 1'. Link to [documents found here](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/Step%201).
+Summaries and notes made from the general contents of this particular link can be found in the folder 'Step 1'. Link to [documents found here](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/step-1).
 
 These will only cover the basic concepts required to get a base understanding of what node is and what makes it ... well ... NODE!!! 
 
@@ -38,7 +38,7 @@ In later steps (and individual folders) we will cover Express, Debugging, Cluste
 
 ### Step 2 - Learn Node Basics
 
-At this point we have a basic understanding of node and are ready to dive into some hands on work. No place seems better to do this than ['The Node School'](http://nodeschool.io/). In the [Step 2 folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/Step%202) you will find the main tutorial course solutions. Well ... my solutions.
+At this point we have a basic understanding of node and are ready to dive into some hands on work. No place seems better to do this than ['The Node School'](http://nodeschool.io/). In the [Step 2 folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/step-2) you will find the main tutorial course solutions. Well ... my solutions.
 
 ### Step 3 - The Process Global Variable
 

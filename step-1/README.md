@@ -104,7 +104,7 @@ writeStream.on('error', function (err) {
 });
 ```
 
-Example available in [playZone folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/Step%201/playZone) as stream-example.js.
+Example available in [playZone folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/step-1/playZone) as stream-example.js.
 
 Can be run from console with: `node stream-example.js input.txt output.txt`
 
