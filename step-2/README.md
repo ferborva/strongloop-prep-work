@@ -34,6 +34,6 @@ Collection of tutoriales that offers an introduction to the use of ES6 in node p
 - **Generator**: Same as previous but using a Generator Function
 - **Destructure**: Nested Object destructuring example
 - **Arrow Function**: Use arrow functions (very little info about them though) in a functional exercise that uses 'map' and 'reduce'
-- **Rest and Spread**: 
+- **Rest and Spread**: Example of use of the spread and rest operators
 
 For an indepth study on ES6 I recommend reading [Understanding ES6](https://leanpub.com/understandinges6/read).
