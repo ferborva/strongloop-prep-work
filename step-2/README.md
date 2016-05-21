@@ -24,7 +24,7 @@ First tutorial collection. Goes through the very basics:
 
 Collection of tutoriales that offers an introduction to the use of ES6 in node programming:
 - **Babel Setup**: basic instalation of babel-cli and use of an ES6 template string
-- **Class**
+- **Class**: Create a class the ES6 way
 - **Class Extend**
 - **Modules with name**
 - **Modules default export**
