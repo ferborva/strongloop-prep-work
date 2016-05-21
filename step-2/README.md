@@ -29,7 +29,7 @@ Collection of tutoriales that offers an introduction to the use of ES6 in node p
 - **Modules with name**: Create modules with 'import' and 'export' keywords
 - **Modules default export**: Same as previous buy using the 'export default' keywords, easing importing for developers
 - **Block scope**: Understanding with simple examples the use of 'let' and 'const' variable declarations
-- **Computed property**
+- **Computed property**: Define object computed properties with ES6
 - **Iterator for of**
 - **Generator**
 - **Destructure**
