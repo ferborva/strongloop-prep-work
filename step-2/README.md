@@ -37,3 +37,16 @@ Collection of tutoriales that offers an introduction to the use of ES6 in node p
 - **Rest and Spread**: Example of use of the spread and rest operators
 
 For an indepth study on ES6 I recommend reading [Understanding ES6](https://leanpub.com/understandinges6/read).
+
+
+###### Scope, Chains and Closures
+
+>Scope, Scope Chains, Closures, and Garbage Collection all have one thing in common: They're often hand-waved away. How do closures actually work? When does Garbage Collection occur? What really IS a Scope Chain?
+>
+>In this workshop, we will discover it's not black magic after all; No hand waving is required to explain these language features, in fact you've been using them all along without realising.
+
+- **Scopes**
+- **Scope Chains**
+- **Global Scope & Shadowing**
+- **Closures**
+- **Garbage Collection**
