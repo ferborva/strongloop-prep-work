@@ -52,7 +52,7 @@ Brief but concise. We will go through some of the main Events, Signals, objects 
 
 ## A little on the side
 
-- [High level sytle guide in Javascript](https://gist.github.com/dominictarr/2401787): always open to discussion but definitely makes good points
+- [High level sytyle guide in Javascript](https://gist.github.com/dominictarr/2401787): always open to discussion but definitely makes good points
 
 
 # Disclaimer
