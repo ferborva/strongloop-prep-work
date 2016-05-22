@@ -52,3 +52,24 @@ Very basic overview of scopes (Lexical and Block with brief mention of others su
 - **Global Scope & Shadowing**: Extends the previous to demo shadowing and global scope assignment
 - **Closures**: Extends the previous to create a closure
 - **Garbage Collection**: Interesting introduction to the memory profiling tool. Could be more extensive though.
+
+
+###### Stream Adventure
+
+Worth your time. Well crafted exercises that will help you get your head around 'Streams' in node and how to leverage their power in your programming.
+
+- **Beep Boop**: console.log to check tuts correctly installed
+- **Meet Pipe**
+- **Input / Output**
+- **Transform**
+- **Lines**
+- **Concat**
+- **HTTP Server**
+- **HTTP Client**
+- **WebSockets**
+- **HTML Stream**
+- **Duplexer**
+- **Duplexer Redux**
+- **Combiner**
+- **Crypt**
+- **Secretz**
