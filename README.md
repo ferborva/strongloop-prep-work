@@ -54,6 +54,7 @@ Brief but concise. We will go through some of the main Events, Signals, objects 
 
 - [High level sytyle guide in Javascript](https://gist.github.com/dominictarr/2401787): always open to discussion but definitely makes good points
 
+- [ES6 Availability per Node Version](http://node.green/): keeping up
 
 # Disclaimer
 
