@@ -60,7 +60,7 @@ Worth your time. Well crafted exercises that will help you get your head around 
 
 - **Beep Boop**: console.log to check tuts correctly installed
 - **Meet Pipe**: first stream pipe example. Pipe a File System readStream to the process stdout stream
-- **Input / Output**
+- **Input / Output**: pipe a readily accesible readable stream into a writeable stream. No mystery here
 - **Transform**
 - **Lines**
 - **Concat**
