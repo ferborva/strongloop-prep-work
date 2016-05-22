@@ -59,7 +59,7 @@ Very basic overview of scopes (Lexical and Block with brief mention of others su
 Worth your time. Well crafted exercises that will help you get your head around 'Streams' in node and how to leverage their power in your programming.
 
 - **Beep Boop**: console.log to check tuts correctly installed
-- **Meet Pipe**
+- **Meet Pipe**: first stream pipe example. Pipe a File System readStream to the process stdout stream
 - **Input / Output**
 - **Transform**
 - **Lines**
