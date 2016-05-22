@@ -66,7 +66,7 @@ Worth your time. Well crafted exercises that will help you get your head around 
 - **Concat**: Use the *concat-stream* module to collect all buffers received from a stream into a single buffer, reverse it and write it to the stdout stream
 - **HTTP Server**: Create an HTTP Server that returns a POST request Body in upperCase
 - **HTTP Client**: Use the *request* module to POST a stream of data to a server and pipe the stream returned into stdout
-- **WebSockets**
+- **WebSockets**: Basically you create a duplex Stream with the websockets modules, create a webSocket conexion to a server and write to the stream
 - **HTML Stream**
 - **Duplexer**
 - **Duplexer Redux**
