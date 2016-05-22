@@ -64,7 +64,7 @@ Worth your time. Well crafted exercises that will help you get your head around 
 - **Transform**: Create an upperCasing transform stream with the through2 module
 - **Lines**: Use the *split* module and the *through2* module to transform an input stream line by line
 - **Concat**: Use the *concat-stream* module to collect all buffers received from a stream into a single buffer, reverse it and write it to the stdout stream
-- **HTTP Server**
+- **HTTP Server**: Create an HTTP Server that returns a POST request Body in upperCase
 - **HTTP Client**
 - **WebSockets**
 - **HTML Stream**
