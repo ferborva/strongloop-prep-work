@@ -41,12 +41,14 @@ For an indepth study on ES6 I recommend reading [Understanding ES6](https://lean
 
 ###### Scope, Chains and Closures
 
+Very basic overview of scopes (Lexical and Block with brief mention of others such as with or eval), scope chains, global scope, shadowing and closures. Also contains a brief presentation of the ChromeDev Memory profiling tool.
+
 >Scope, Scope Chains, Closures, and Garbage Collection all have one thing in common: They're often hand-waved away. How do closures actually work? When does Garbage Collection occur? What really IS a Scope Chain?
 >
 >In this workshop, we will discover it's not black magic after all; No hand waving is required to explain these language features, in fact you've been using them all along without realising.
 
 - **Scopes**: Extreeeeemely basic example of lexical scope
 - **Scope Chains**: Same as previous but includes a nested lexical scope (has info on scopes, both lexical and block, and gives examples of nesting)
-- **Global Scope & Shadowing**
-- **Closures**
-- **Garbage Collection**
+- **Global Scope & Shadowing**: Extends the previous to demo shadowing and global scope assignment
+- **Closures**: Extends the previous to create a closure
+- **Garbage Collection**: Interesting introduction to the memory profiling tool. Could be more extensive though.
