@@ -62,7 +62,7 @@ Worth your time. Well crafted exercises that will help you get your head around 
 - **Meet Pipe**: first stream pipe example. Pipe a File System readStream to the process stdout stream
 - **Input / Output**: pipe a readily accesible readable stream into a writeable stream. No mystery here
 - **Transform**: Create an upperCasing transform stream with the through2 module
-- **Lines**
+- **Lines**: Use the *split* module and the *through2* module to transform an input stream line by line
 - **Concat**
 - **HTTP Server**
 - **HTTP Client**
