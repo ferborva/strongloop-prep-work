@@ -68,7 +68,7 @@ Worth your time. Well crafted exercises that will help you get your head around 
 - **HTTP Client**: Use the *request* module to POST a stream of data to a server and pipe the stream returned into stdout
 - **WebSockets**: Basically you create a duplex Stream with the websockets modules, create a webSocket conexion to a server and write to the stream
 - **HTML Stream**: CRAZYYYYYY!!!! Use *trumpet* module to transform and html stream
-- **Duplexer**
+- **Duplexer**: Create a duplex steam, and join the writeable part of it to another writeable stream and the readable part to another readeable stream
 - **Duplexer Redux**
 - **Combiner**
 - **Crypt**
