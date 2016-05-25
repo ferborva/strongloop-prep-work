@@ -84,11 +84,11 @@ const transform = through(function(buf, encoding, next){
 		};
 		newBlock = false;
 	}else{
-		booksBlock.books[booksBlock.books.length] = obj.name;
+		booksBlock.books.push(obj.name);
 	}
 	next();
 }, function(flush){
-	if(booksBlock){
+	if(booksBlock.books.length){
 		this.push(JSON.stringify(booksBlock)+'\n')
 	}
 	flush();
