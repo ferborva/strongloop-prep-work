@@ -71,7 +71,8 @@ let booksBlock = {name: '', books: []};
 let newBlock = true;
 
 const transform = through(function(buf, encoding, next){
-	if(buf.length === 0) return;
+	if(buf.length === 0) return next();
+	
 	const obj = JSON.parse(buf.toString());
 	if(obj.type && obj.type === 'genre'){
 		if(!newBlock){
@@ -81,12 +82,15 @@ const transform = through(function(buf, encoding, next){
 			name: obj.name,
 			books: []
 		};
-		newBlock = !newBlock;
+		newBlock = false;
 	}else{
 		booksBlock.books[booksBlock.books.length] = obj.name;
 	}
 	next();
 }, function(flush){
+	if(booksBlock){
+		this.push(JSON.stringify(booksBlock)+'\n')
+	}
 	flush();
 });
 
@@ -94,11 +98,46 @@ module.exports = function(){
 	return combiner (
 		split(),
 		transform,
-		process.stdout
+		zip
 	);
 }
 
 /*
 
-This answer blocks ... not correct as of yet ..
+// Here's the reference solution:
+
+  var combine = require('stream-combiner');
+  var through = require('through2');
+  var split = require('split');
+  var zlib = require('zlib');
+
+  module.exports = function () {
+      var grouper = through(write, end);
+      var current;
+      
+      function write (line, _, next) {
+          if (line.length === 0) return next();
+          var row = JSON.parse(line);
+          
+          if (row.type === 'genre') {
+              if (current) {
+                  this.push(JSON.stringify(current) + '\n');
+              }
+              current = { name: row.name, books: [] };
+          }
+          else if (row.type === 'book') {
+              current.books.push(row.name);
+          }
+          next();
+      }
+      function end (next) {
+          if (current) {
+              this.push(JSON.stringify(current) + '\n');
+          }
+          next();
+      }
+      
+      return combine(split(), grouper, zlib.createGzip());
+  };
+
  */
