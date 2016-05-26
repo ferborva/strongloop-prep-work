@@ -81,7 +81,7 @@ Small collection of introductory tutorials to the express web framework.
 
 - **Hello World**: Create an express app, listen on a certain url and return 'Hello World'
 - **Static**: Serve static files using middleware
-- **Jade**
+- **Jade**: Serve index.jade file on GET request to /home
 - **Good old form**
 - **Stylish CSS**
 - **Param pam pam**
