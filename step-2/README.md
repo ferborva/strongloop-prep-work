@@ -70,9 +70,9 @@ Worth your time. Well crafted exercises that will help you get your head around 
 - **HTML Stream**: CRAZYYYYYY!!!! Use *trumpet* module to transform and html stream
 - **Duplexer**: Create a duplex stream, and join the writeable part of it to another writeable stream and the readable part to another readeable stream
 - **Duplexer Redux**: Create a duplex stream to which will be piped some data and which should return a given readable stream.
-- **Combiner**
-- **Crypt**
-- **Secretz**
+- **Combiner**: Use the *combiner* module to create a duplex stream, similar to that created in the previous examples, but instead of only giving a readable and writable stream to hook to each end of the duplex stream, you pipe a series of streams on to another
+- **Crypt**: Use the *crypto* core module to decipher encrypted data
+- **Secretz**: Nice mix of most things learned through the streams challenge. Unzip, read tar file, decrypting, transforming and quite a bit of piping
 
 
 ###### Expressworks
