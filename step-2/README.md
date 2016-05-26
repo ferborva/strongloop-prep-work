@@ -73,3 +73,17 @@ Worth your time. Well crafted exercises that will help you get your head around 
 - **Combiner**
 - **Crypt**
 - **Secretz**
+
+
+###### Expressworks
+
+Small collection of introductory tutorials to the express web framework.
+
+- **Hello World**: Create an express app, listen on a certain url and return 'Hello World'
+- **Static**
+- **Jade**
+- **Good old form**
+- **Stylish CSS**
+- **Param pam pam**
+- **What's in query**
+- **JSON me**

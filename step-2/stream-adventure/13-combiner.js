@@ -83,7 +83,7 @@ const transform = through(function(buf, encoding, next){
 			books: []
 		};
 		newBlock = false;
-	}else{
+	}else if(obj.type) {
 		booksBlock.books.push(obj.name);
 	}
 	next();
