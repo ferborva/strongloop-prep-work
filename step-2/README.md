@@ -80,7 +80,7 @@ Worth your time. Well crafted exercises that will help you get your head around 
 Small collection of introductory tutorials to the express web framework.
 
 - **Hello World**: Create an express app, listen on a certain url and return 'Hello World'
-- **Static**
+- **Static**: Serve static files using middleware
 - **Jade**
 - **Good old form**
 - **Stylish CSS**
