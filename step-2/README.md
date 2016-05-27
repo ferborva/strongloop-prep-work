@@ -84,6 +84,6 @@ Small collection of introductory tutorials to the express web framework.
 - **Jade**: Serve index.jade file on GET request to /home
 - **Good old form**: Parse a classic form POST
 - **Stylish CSS**: Use the *Stylus* module to create css files on the fly
-- **Param pam pam**
+- **Param pam pam**: Create route with a parameter and use it to respond accordingly
 - **What's in query**
 - **JSON me**
