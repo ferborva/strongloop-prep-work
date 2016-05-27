@@ -83,7 +83,7 @@ Small collection of introductory tutorials to the express web framework.
 - **Static**: Serve static files using middleware
 - **Jade**: Serve index.jade file on GET request to /home
 - **Good old form**: Parse a classic form POST
-- **Stylish CSS**
+- **Stylish CSS**: Use the *Stylus* module to create css files on the fly
 - **Param pam pam**
 - **What's in query**
 - **JSON me**
