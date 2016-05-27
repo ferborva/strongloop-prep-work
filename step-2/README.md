@@ -77,7 +77,7 @@ Worth your time. Well crafted exercises that will help you get your head around 
 
 ###### Expressworks
 
-Small collection of introductory tutorials to the express web framework.
+Small collection of introductory tutorials to the express web framework. Very basic but gives you a little bit of insight into what you can do with express. Good if you have never worked with express before.
 
 - **Hello World**: Create an express app, listen on a certain url and return 'Hello World'
 - **Static**: Serve static files using middleware
@@ -86,4 +86,4 @@ Small collection of introductory tutorials to the express web framework.
 - **Stylish CSS**: Use the *Stylus* module to create css files on the fly
 - **Param pam pam**: Create route with a parameter and use it to respond accordingly
 - **What's in query**: Retrieve query data from the URL as JSON
-- **JSON me**
+- **JSON me**: Read a file and send it back as JSON
