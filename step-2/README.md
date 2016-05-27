@@ -85,5 +85,5 @@ Small collection of introductory tutorials to the express web framework.
 - **Good old form**: Parse a classic form POST
 - **Stylish CSS**: Use the *Stylus* module to create css files on the fly
 - **Param pam pam**: Create route with a parameter and use it to respond accordingly
-- **What's in query**
+- **What's in query**: Retrieve query data from the URL as JSON
 - **JSON me**
