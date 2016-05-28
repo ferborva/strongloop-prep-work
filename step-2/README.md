@@ -93,8 +93,8 @@ Small collection of introductory tutorials to the express web framework. Very ba
 
 Learning how to use the 'async' module. Very handy when you need to deal with asynchronicity.
 
-- **Waterfall**: Create an async waterfall to control flow in dependent asynchronous tasks
-- **Series Object**
+- **Waterfall**: Create an async *waterfall* to control flow in dependent asynchronous tasks
+- **Series Object**: Use the *series object* to launch multiple async requests and collect the results in a final callback
 - **Each**
 - **Map**
 - **Times**
