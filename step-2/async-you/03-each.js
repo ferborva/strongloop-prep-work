@@ -54,7 +54,7 @@ const urlArray = process.argv.splice(2);
 
 function getRequest(url, done){
 	http.get(url, (res) => {
-		done(null);
+		done();
 	}).on('error', (err) => {
 		done(err);
 	});

@@ -96,7 +96,7 @@ Learning how to use the 'async' module. Very handy when you need to deal with as
 - **Waterfall**: Create an async *waterfall* to control flow in dependent asynchronous tasks
 - **Series Object**: Use the *series object* to launch multiple async requests and collect the results in a final callback
 - **Each**: Use *each* which runs a functions with each item in an array as arguments and receives a callback with one argument, a posible error
-- **Map**
+- **Map**: Mapping an array of items through a function and catching the mapped array or an error (if any) in a callback
 - **Times**
 - **Reduce**
 - **Whilst**
