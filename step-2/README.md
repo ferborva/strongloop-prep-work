@@ -87,3 +87,16 @@ Small collection of introductory tutorials to the express web framework. Very ba
 - **Param pam pam**: Create route with a parameter and use it to respond accordingly
 - **What's in query**: Retrieve query data from the URL as JSON
 - **JSON me**: Read a file and send it back as JSON
+
+
+###### Async You
+
+Learning how to use the 'async' module. Very handy when you need to deal with asynchronicity.
+
+- **Waterfall**: Create an async waterfall to control flow in dependent asynchronous tasks
+- **Series Object**
+- **Each**
+- **Map**
+- **Times**
+- **Reduce**
+- **Whilst**
