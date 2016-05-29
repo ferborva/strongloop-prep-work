@@ -99,4 +99,4 @@ Learning how to use the 'async' module. Very handy when you need to deal with as
 - **Map**: Mapping an array of items through a function and catching the mapped array or an error (if any) in a callback
 - **Times**: Use async *times* to repeat a function using an 'time' n variable
 - **Reduce**: Run an asynchronous reduce to recover a running total from the result of several GET requests
-- **Whilst**
+- **Whilst**: Repeat asynchronous requests until a condition is met and return an accumulated result
