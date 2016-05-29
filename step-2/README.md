@@ -98,5 +98,5 @@ Learning how to use the 'async' module. Very handy when you need to deal with as
 - **Each**: Use *each* which runs a functions with each item in an array as arguments and receives a callback with one argument, a posible error
 - **Map**: Mapping an array of items through a function and catching the mapped array or an error (if any) in a callback
 - **Times**: Use async *times* to repeat a function using an 'time' n variable
-- **Reduce**
+- **Reduce**: Run an asynchronous reduce to recover a running total from the result of several GET requests
 - **Whilst**
