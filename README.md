@@ -48,7 +48,7 @@ The Strongloop study guide makes a brief comment on what should be studied about
 >
 > -- <cite>Strongloop Certification Team</cite>
 
-Brief but concise. We will go through some of the main Events, Signals, objects and methods available to the `process` variable and checkout *child processes*.
+Brief but concise. We will go through some of the main Events, Signals, objects and methods available to the `process` variable and checkout *child processes*. [Step 3 folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/step-3) contains summaries, links, examples, ...
 
 ## A little on the side
 
