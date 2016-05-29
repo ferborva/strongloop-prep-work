@@ -100,3 +100,12 @@ Learning how to use the 'async' module. Very handy when you need to deal with as
 - **Times**: Use async *times* to repeat a function using an 'time' n variable
 - **Reduce**: Run an asynchronous reduce to recover a running total from the result of several GET requests
 - **Whilst**: Repeat asynchronous requests until a condition is met and return an accumulated result
+
+
+###### Test anything
+
+- **Log it out**: log out a module function 'test'-ish result 
+- **Tell me what is wrong**
+- **Tape it together**
+- **Call me maybe**
+- **To err is human, to purr feline**
