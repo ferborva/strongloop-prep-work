@@ -106,6 +106,6 @@ Learning how to use the 'async' module. Very handy when you need to deal with as
 
 - **Log it out**: log out a module function 'test'-ish result 
 - **Tell me what is wrong**: use *assert* module for basic 'equal'/'ok' check
-- **Tape it together**
+- **Tape it together**: use *tape* module to create small blocks of organized test assertions
 - **Call me maybe**
 - **To err is human, to purr feline**
