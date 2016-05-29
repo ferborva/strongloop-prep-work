@@ -108,4 +108,4 @@ Learning how to use the 'async' module. Very handy when you need to deal with as
 - **Tell me what is wrong**: use *assert* module for basic 'equal'/'ok' check
 - **Tape it together**: use *tape* module to create small blocks of organized test assertions
 - **Call me maybe**: ensure a callback is run a specified number of times
-- **To err is human, to purr feline**
+- **To err is human, to purr feline**: check for error 'Throw's
