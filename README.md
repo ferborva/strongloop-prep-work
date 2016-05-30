@@ -50,6 +50,13 @@ The Strongloop study guide makes a brief comment on what should be studied about
 
 Brief but concise. We will go through some of the main Events, Signals, objects and methods available to the `process` variable and checkout *child processes*. [Step 3 folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/step-3) contains summaries, links, examples, ...
 
+### Step 4 - After a general overview, dive in
+
+Up until now we've gone through the node basics, fooled around with it in nodeschool.io and taken a deeper look into the process global variable. Now, lets get down to some business with: 'Smashing Node.js: Javascript Everywhere'. 
+
+Reading the book we go through a general introduction to the javascript basics required for a good understanding of the book examples, node basics and standards and plenty of exercises. In the [Step 4 folder](https://github.com/beeva-fernandobordallo/strongloop-prep-work/tree/master/step-4) you can find a few summaries as well as working examples that the book walks you through. **Definitely worth buying!** (invest in good writing)
+
+
 ## A little on the side
 
 - [High level sytyle guide in Javascript](https://gist.github.com/dominictarr/2401787): always open to discussion but definitely makes good points
