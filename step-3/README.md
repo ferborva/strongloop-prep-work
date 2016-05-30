@@ -21,7 +21,7 @@ All are accessible as would be any other typical object propertie: `process.<pro
 - arch: processor architecture you are running no ('arm', 'ia32' or 'x64')
 - **argv**: arguments vector. Contains the command line arguments. First element will be 'node', second element will be the name of the javascript file being run and rest any additional arguments passed in
 - config: Object containing the JavaScript representation of the configure options that were used to compile the current Node.js 
-- connected: connection state (Boolean) of the IPC channel. If true, messages can be sent/received to and from other processes
+- connected: connection state (Boolean) of the IPC channel. If true, messages can be sent to parent processes
 - **env**: Object containing the user ENVIRONMENT configuration
 - execArgv: Node.js-specific command line options from the executable that started the process. Useful in order to *spawn child processes with the same execution environment as the parent*
 - execPath: absolute pathname of the executable that started the process
@@ -45,3 +45,16 @@ Run the commands to see the example print out:
 1. Basic example of access and shadowing: `node 01-basics.js 1`
 2. Properties printout example: `node --harmony 01-basics.js 2 bla2 bla3 myOhMy`
 3. stdin listening, stdout write and stderr write: `node 01-basics.js 3`
+
+
+#### Events
+
+Being an instance of the EventEmitter class, we can listen on events and emit events. The process specific events we can listen on are:
+
+- beforeExit: This event is emitted when Node.js empties its event loop and has nothing else to schedule. Normally, Node.js exits when there is no work scheduled, but a listener for 'beforeExit' can make asynchronous calls, and cause Node.js to continue.
+- exit: Emitted when the process is about to exit. There is no way to prevent the exiting of the event loop at this point.
+- message: Messages sent by ChildProcess.send() are obtained using the 'message' event on the child's process object. Further on we look into process communication in depth.
+
+
+
+// Todo - In depth summary of communication between processes (parent-child) using `send()` method and `'message'` events.
