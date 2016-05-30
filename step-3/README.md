@@ -89,5 +89,86 @@ All of these methods can be watched out for as with any other method on an objec
 process.<method_name>();
 ```
 
+## Child Process
 
-// Todo - In depth summary of communication between processes (parent-child) using `send()` method and `'message'` events.
+Node.js runs in a single thread mode but it uses an event-driven paradigm to handle concurrency. It also facilitates creation of child processes to leverage *parallel processing* on multi-core cpu based systems. The **child_process module** provides the ability to spawn child processes.
+
+- [Link to child_process examples (TutorialsPoint)](http://www.tutorialspoint.com/nodejs/nodejs_scaling_application.htm)
+- [Official Child_process documentation](https://nodejs.org/dist/latest-v4.x/docs/api/child_process.html#child_process_child_process_exec_command_options_callback)
+
+#### Methods to spawn a child process
+
+- **child_process.exec()**: spawns a shell and runs a command within that shell, passing the stdout and stderr to a callback function when complete.
+- child_process.execFile(): similar to child_process.exec() except that it spawns the command directly without first spawning a shell.
+- **child_process.fork()**: spawns a new Node.js process and invokes a specified module with an IPC communication channel established that allows sending messages between parent and child.
+- child_process.execSync(): a synchronous version of child_process.exec() that will block the Node.js event loop.
+- child_process.execFileSync(): a synchronous version of child_process.execFile() that will block the Node.js event loop.
+
+#### Child_process events, properties and methods
+
+When a child process is created, the instance returned gives us access to several useful events, properties and methods. They are very similar to those we have access to on the process global variable:
+
+- **Event: 'close'**
+- Event: 'disconnect'
+- **Event: 'error'**
+- **Event: 'exit'**
+- **Event: 'message'**
+- **child.connected**
+- child.disconnect()
+- child.kill([signal])
+- child.pid
+- **child.send(message[, sendHandle][, callback])**
+	- Example: sending a server object
+	- Example: sending a socket object
+- **child.stderr**
+- **child.stdin**
+- child.stdio
+- **child.stdout**
+
+These however refer to the newly spawned process. Therefore we find subtle differences, like for example:
+- stdin is a WRITABLE STREAM instead of a readable stream, as is the process.stdin
+- same case of oposition is found in stdout and stderr
+
+#### Process - Child_process Communication
+
+Both the process and the child_process can send and listen out for messages. This communication between connected processes (linked through an IPC channel) is leveraged with:
+
+process.send() -> send message to the direct parent of process
+child.send() -> sends a message to the child of the process we listen from
+
+process.on('message') -> listens for a message sent by the parent of process
+child.on('message') -> listens for a message sent by the child of process
+
+These use cases can be seen very clearly with the following example:
+
+
+- **PARENT PROCESS**: spawns two children that each handle connections with "normal" or "special" priority.
+
+```
+const normal = require('child_process').fork('child.js', ['normal']);
+const special = require('child_process').fork('child.js', ['special']);
+
+// Open up the server and send sockets to child
+const server = require('net').createServer();
+server.on('connection', (socket) => {
+
+  // If this is special priority
+  if (socket.remoteAddress === '74.125.127.100') {
+    special.send('socket', socket);
+    return;
+  }
+  // This is normal priority
+  normal.send('socket', socket);
+});
+server.listen(1337);
+```
+
+- **CHILD PROCESS**: The child.js would receive the socket handle as the second argument passed to the event callback function
+
+```
+process.on('message', (m, socket) => {
+  if (m === 'socket') {
+    socket.end(`Request handled with ${process.argv[2]} priority`);
+  }
+});
+```
