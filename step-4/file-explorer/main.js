@@ -1,48 +1,35 @@
+'use strict';
+
 const fs = require('fs');
+const colors = require('colors');
+const async = require('async');
+const filesMod = require('./file-functions');
 
-fs.readdir(process.cwd(), (err, files) => {
+
+function listenForInput(data, next){
 	console.log('');
-
-	if(!files.length) {
-		return console.log('\033[31m No files to show!\033[39m\n');
-	}
-
-	console.log('Select which file or directory you want to see:\n');
-
-	function file(i) {
-		const filename = files[i];
-
-		fs.stat(`${__dirname}/${filename}`, (err, stats) => {
-			if (stats.isDirectory()) {
-				console.log(i + ' \033[36m'+filename+'/\033[39m');
+	process.stdout.write(' - Enter your choice: '.blue);
+	process.stdin.on('readable', () => {
+		const choice = process.stdin.read();
+		if(choice !== null) {
+			const file = data[Number(choice)];
+			if (!file) {
+				process.stdout.write(' - Enter your choice: '.blue);
 			} else {
-				console.log(i+' \033[90m'+filename+'/\033[39m');
-			}
-
-			i++;
-
-			if (i == files.length) {
-				console.log('');
-				process.stdout.write('\033[33m Enter your choice: \033[39m');
-				process.stdin.on('readable', () => {
-					const choice = process.stdin.read();
-					if(choice !== null) {
-						const filename = files[Number(choice)];
-						process.stdin.emit('end');
-						if (!filename) {
-							process.stdout.write('\033[33m Enter your choice: \033[39m');
-						} else {
-							fs.readFile(`${__dirname}/${filename}`, (err, data) => {
-								console.log('');
-								console.log('\033[90m' + data.toString().replace(/(.*)/g, '$1') + '\033[39m');
-							});
-						}
-					}
+				process.stdin.emit('end');
+				fs.readFile(`${filesMod.directory}/${file.name}`, (err, data) => {
+					console.log('');
+					console.log(data.toString().replace(/(.*)/g, '$1').grey);
+					next(null, choice);
 				});
-			} else {
-				file(i);
 			}
-		});
-	}
-	file(0);
+		}
+	});
+}
+
+async.waterfall([
+	filesMod.getData,
+	listenForInput
+], (err, data) => {
+		if (err) console.error(err);
 });
