@@ -9,6 +9,7 @@
   "author": "smashing-nodejs",
   "license": "ISC",
   "dependencies": {
+    "async": "^1.5.2",
     "colors": "^1.1.2"
   }
 }
