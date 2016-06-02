@@ -57,4 +57,10 @@ exports.getData = function getData(next){
 	});	
 }
 
-exports.directory = exploreDir;
+exports.getDir = function getDir(){
+	return exploreDir;
+}
+
+exports.setDir = function setDir(newDir){
+	exploreDir += '/' + newDir;
+}
