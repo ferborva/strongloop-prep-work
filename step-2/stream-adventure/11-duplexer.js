@@ -21,15 +21,103 @@ your solution file is located.
 
  */
 
+// 'use strict';
+
+// const spawn = require('child_process').spawn;
+// const Duplex = require('stream').Duplex;
+
+// module.exports = function (cmd, args) {
+//   const ps = spawn(cmd, args);
+//   const myDuplex = new Duplex({
+//     read: function(n, chunk) {
+//       this.push(chunk);
+//     }
+//   });
+
+//   myDuplex.write = function (chunk, enc, cb) { ps.stdin.write(chunk, enc, cb); }
+//   myDuplex.end = function (chunk, enc, cb) { ps.stdin.end(chunk, enc, cb); }
+
+//   ps.stdout.on('data', (buff) => {
+//     myDuplex.emit('data', buff);
+//   });
+//   ps.stdout.on('end', () => {
+//     myDuplex.emit('end');
+//   });
+
+//   return myDuplex;
+
+// };
+
 'use strict';
 
 const spawn = require('child_process').spawn;
-const duplexer = require('duplexer2');
+const Duplex = require('stream').Duplex;
+const util = require('util');
 
-module.exports = function (cmd, args) {
-    const ps = spawn(cmd, args);
-    return duplexer(ps.stdin, ps.stdout);
+let readableStreamCounter = 0;
+let myDuplex;
+
+function CustomDuplex (cfg) {
+    Duplex.call(this, cfg);
+    this._data = cfg.data || {};
+}
+
+util.inherits(CustomDuplex, Duplex);
+
+CustomDuplex.prototype._read = function (chunkSize) {
+    // chunkSize = 50;
+    var self = this;
+
+    if (readableStreamCounter < self._data.length) {
+        if ((self._data.length - readableStreamCounter) < chunkSize) {
+            self.push(self._data.slice(readableStreamCounter, (self._data.length - readableStreamCounter)));
+            readableStreamCounter += (self._data.length - readableStreamCounter);
+        }
+        else {
+            self.push(self._data.slice(readableStreamCounter, readableStreamCounter + chunkSize));
+            readableStreamCounter += chunkSize;
+        }
+    }
+    else {
+        self.push(null);
+    }
 };
+
+CustomDuplex.prototype._write = function (chunk, encoding, callback) {
+    console.log(typeof chunk);
+
+    process.stdin(chunk, encoding, callback);
+
+};
+
+
+var readData = '';
+
+process.stdout.on('data', function (chunk) {
+    console.log('');
+    console.log('Read a chunk of data');
+    console.log(chunk);
+    console.log('');
+    readData += chunk;
+});
+
+process.stdout.on('end', function () {
+
+    myDuplex = new CustomDuplex({
+        data: readData,
+        encoding: 'utf8'
+    });
+});
+
+// 'use strict';
+
+// const spawn = require('child_process').spawn;
+// const duplexer = require('duplexer2');
+
+// module.exports = function (cmd, args) {
+//     const ps = spawn(cmd, args);
+//     return duplexer(ps.stdin, ps.stdout);
+// };
 
 /*
 

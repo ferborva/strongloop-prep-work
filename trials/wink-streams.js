@@ -31,7 +31,7 @@ ReadableStream.prototype._read = function (chunkSize) {
         }
     }
     else {
-        self.push('');
+        self.push(null);
     }
 };
 
