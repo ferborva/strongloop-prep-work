@@ -1,0 +1,19 @@
+{
+  "name": "api-auth-trial-1",
+  "version": "0.0.1",
+  "description": "Authenticate API with JSON Web Token system",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "author": "fbv",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^7.0.0",
+    "mongoose": "^4.4.19",
+    "morgan": "^1.7.0"
+  }
+}
