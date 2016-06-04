@@ -37,10 +37,10 @@ const port = process.env.PORT || 3000;
 // 
 // The path of our passport object is important to note here. We will create it at the very beginning of the file with var passport = require('passport');. Then we pass it into our config/passport.js file for it to be configured. Then we pass it to the app/routes.js file for it to be used in our routes.
 // 
-// require('./config/passport')(passport);
 
 // Express Middleware
 app.use(morgan('dev')); // log every request to the console
+require('./config/passport')(passport);
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 
