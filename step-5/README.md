@@ -195,4 +195,5 @@ RisingStack has put together 5 key 'rules' to keep projects codeClean and easily
 
 Pretty quick overview. More info wanted  ... soooooooo -> Scotch came to the rescue:
 
-[Easy Node Authentication Tutorial series](https://scotch.io/tutorials/easy-node-authentication-setup-and-local)
+- [Easy Node Authentication Tutorial series](https://scotch.io/tutorials/easy-node-authentication-setup-and-local)
+- [API Authentication](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens)
