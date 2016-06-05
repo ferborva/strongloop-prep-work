@@ -2,6 +2,7 @@
 
 const LocalStrategy = require('passport-local').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
+const TwitterStrategy = require('passport-twitter').Strategy;
 
 const User = require('../app/models/user');
 
@@ -125,7 +126,7 @@ module.exports = (passport) => {
         process.nextTick(() => {
 
             // find the user in the database based on their facebook id
-            User.findOne({ 'facebook.id' : profile.id }, function(err, user) {
+            User.findOne({ 'facebook.id' : profile.id }, (err, user) => {
 
                 // if there is an error, stop everything and return that
                 // ie an error connecting to the database
@@ -145,9 +146,10 @@ module.exports = (passport) => {
                     newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
                     newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
                     newUser.facebook.photo = profile.profileUrl;
+                    newUser.facebook.fullProfile = profile._json;
 
                     // save our user to the database
-                    newUser.save(function(err) {
+                    newUser.save((err) => {
                         if (err)
                             throw err;
 
@@ -162,4 +164,65 @@ module.exports = (passport) => {
 
      }));
 
+
+
+    /**
+     * ------------------ TWITTER STRATEGY ------------------
+     */
+
+    passport.use(new TwitterStrategy({
+
+        consumerKey: configAuth.twitterAuth.consumerKey,
+        consumerSecret: configAuth.twitterAuth.consumerSecret,
+        callbackURL: configAuth.twitterAuth.callbackURL
+
+    },
+    (token, tokenSecret, profile, done) => {
+
+
+        console.log('USER LOGGED IN WITH TWITTER ACCOUNT');
+
+        console.log('Token: ' + token);
+        console.log('Refresh Token: ' + tokenSecret);
+        console.log('Profile:');
+        console.log(profile);
+
+
+        // make the code asynchronous
+        // User.findOne won't fire until we have all our data back from Twitter
+        process.nextTick(() => {
+
+            User.findOne({ 'twitter.id' : profile.id }, (err, user) => {
+
+                // if there is an error, stop everything and return that
+                // ie an error connecting to the database
+                if (err)
+                    return done(err);
+
+                // if the user is found then log them in
+                if (user) {
+                    return done(null, user); // user found, return that user
+                } else {
+                    // if there is no user, create them
+                    var newUser = new User();
+
+                    // set all of the user data that we need
+                    newUser.twitter.id = profile.id;
+                    newUser.twitter.token = token;
+                    newUser.twitter.username = profile.username;
+                    newUser.twitter.displayName = profile.displayName;
+                    newUser.twitter.fullProfile = profile._json;
+
+                    // save our user into the database
+                    newUser.save((err) => {
+                        if (err)
+                            throw err;
+                        return done(null, newUser);
+                    });
+                }
+            });
+
+        });
+
+    }));
 };

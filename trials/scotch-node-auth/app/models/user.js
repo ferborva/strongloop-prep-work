@@ -19,21 +19,24 @@ const userSchema = mongoose.Schema({
 		token: String,
 		email: String,
 		name: String,
-		photo: String
+		photo: String,
+		fullProfile: Object
 	},
 
 	twitter: {
 		id: String,
 		token: String,
 		displayName: String,
-		username: String
+		username: String,
+		fullProfile: Object
 	},
 
 	google: {
 		id: String,
 		token: String,
 		email: String,
-		name: String
+		name: String,
+		fullProfile: Object
 	}
 
 });
