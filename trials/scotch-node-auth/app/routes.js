@@ -2,6 +2,11 @@
 
 module.exports = function routesFunc (app, passport) {
 
+
+/**
+ * ------------------------- TUTORIAL 1 - Local Login strategy
+ */
+
 	/**
 	 * Home page route
 	 */
@@ -56,6 +61,20 @@ module.exports = function routesFunc (app, passport) {
     	req.logout();
         res.redirect('/');
     });
+
+/**
+ * ------------- TUTORIAL 2 - FACEBOOK AUTH ROUTES
+ */
+
+    /**
+     * Facebook Auth routes
+     */
+    app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
+
+    app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+        successRedirect: '/profile',
+        failureRedirect: '/'
+    }));
 
 };
 
