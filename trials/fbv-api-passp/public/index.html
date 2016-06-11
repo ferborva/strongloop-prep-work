@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>API Control Test</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,11 +13,13 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 		<!-- Material Icons -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Code monospace font -->
+		<link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="css/main.css">
 
     </head>
-    <body class="orange">
+    <body class="teal lighten-4">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -28,23 +30,61 @@
 			<h3 class="center-align">
 				WebApp backed up by an API authenticated with Passport and JWT
 			</h3>
+			<hr>
 
 			<div class="row">
 				
 				<div class="col s12 m4" id="general-controls">
-				
-					<a class="waves-effect waves-light btn purple" onclick="callApiBase()">
-						<i class="material-icons left">cloud</i>
-						CallApi
-					</a>
 					
+					<h5>API controls</h5>
+					<hr>
+
+					<a class="waves-effect waves-light btn purple full-width" onclick="myApp.verifyApi()">
+						<i class="material-icons left">cloud</i>
+						Verify API
+					</a>
+
+					<br>
+					<br>
+
+					<form action="javascript:myApp.newUser()">
+						<h6> sreate new User </h6>
+						<div class="input-field">
+				          	<i class="material-icons prefix">account_circle</i>
+				          	<input id="form-email" name="form-email" type="email" class="validate" required>
+				          	<label for="form-email" data-error="Must be a valid email">Email</label>
+				        </div>
+				        <br>
+				        <div class="input-field">
+				          	<i class="material-icons prefix">lock</i>
+				          	<input id="form-password" name="form-password" type="password" class="validate" required>
+				          	<label for="form-password">Password</label>
+				        </div>
+						<br>
+				        <button class="btn waves-effect waves-light purple full-width" type="submit">
+				        	<i class="material-icons left">send</i>Create user
+				        </button>
+					</form>
+					
+				</div>
+				
+				<div class="row hide-on-med-and-up">
+					<br>
+					<br>
 				</div>
 
 				<div class="col s12 m8" id="general-outputs">
 					
-					<div class="card-panel z-depth-3" id="output-panel">
-						
+					<div class="row">
+						<div class="col s12">
+							<button class="waves-effect waves-light btn purple right" onclick="myApp.clearPanel()">
+								<!-- <i class="material-icons left">cloud</i> -->
+								> Clear panel
+							</button>
+						</div>
 					</div>
+
+					<div class="card-panel z-depth-3" id="output-panel"></div>
 
 				</div>
 
@@ -57,6 +97,7 @@
 
 		<!-- Compiled and minified JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+		<script src="js/prettyprint.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

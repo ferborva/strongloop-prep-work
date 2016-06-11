@@ -1,18 +1,90 @@
-function callApiBase() {
+// Application namespace
 
-	const options = {
-		method: 'GET'
-	};
+const myApp = {};
 
-	$.ajax('/api', options).then((data) => {console.log('DATA' + data)}, (err) => {console.log('ERR:' + err)});
 
-}
-
+// DOM Ready and Loaded
 
 $(function() {
 
 	console.log('Web Ready to Rock!');
 
-	const panel = document.getElementById('output-panel');
+	myApp.panel = document.getElementById('output-panel');
+
+	myApp.panelBlock();
+	myApp.panelAdd('Hello world!');
+	myApp.panelBlock();
 
 });
+
+// API Call functions
+
+myApp.verifyApi = function verifyApi() {
+
+	const options = {
+		method: 'GET'
+	};
+
+	$.ajax('/api', options).then((data) => {
+		myApp.panelAdd(data);
+		myApp.panelBlock();
+	}, (err) => {
+		myApp.panelAdd(err);
+		myApp.panelBlock();
+	});
+
+}
+
+
+// Form Sending
+
+myApp.newUser = function newUser () {
+
+	const userFormData = {
+		'form-email': $('#form-email')[0].value,
+		'form-password': $('#form-password')[0].value
+	}
+
+	const options = {
+		method: 'POST',
+		data: userFormData
+	}
+
+	$.ajax('/api/newUser', options).then((data) => {
+		myApp.panelJsonDump(data);
+		myApp.panelBlock();
+	}, (err) => {
+		myApp.panelAdd(err);
+		myApp.panelBlock();
+	}).always(() => {
+		// Abstract
+	});
+};
+
+
+// Panel Util Funtions
+
+myApp.panelAdd = function panelAdd (string) {
+	let par = document.createElement('p');
+
+	par.innerHTML = string;
+	myApp.panel.insertBefore( par, myApp.panel.firstChild );
+}
+
+myApp.panelBlock = function panelBlock () {
+	let parSep = document.createElement('p');
+
+	parSep.innerHTML = '-------------------------';
+	myApp.panel.insertBefore( parSep, myApp.panel.firstChild );
+}
+
+myApp.clearPanel = function clearPanel () {
+	myApp.panel.innerHTML = '> Clean start';
+} 
+
+
+myApp.panelJsonDump = function panelJsonDump (string) {
+	var dump = prettyPrint( JSON.parse(string) );
+	myApp.panel.insertBefore( dump, myApp.panel.firstChild );
+}
+
