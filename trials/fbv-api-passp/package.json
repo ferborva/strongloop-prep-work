@@ -1,0 +1,27 @@
+{
+  "name": "fbv-api-passp",
+  "version": "0.0.1",
+  "description": "App trial in which we will authenticate a user through passport and offer him/her a webToken as an access key to the api",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "passport",
+    "auth",
+    "api",
+    "jwt"
+  ],
+  "author": "fbv",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.15.1",
+    "express": "4.13.4",
+    "mongoose": "4.4.20",
+    "morgan": "1.7.0",
+    "passport": "0.3.2",
+    "passport-google-oauth": "1.0.0",
+    "request": "2.72.0"
+  }
+}

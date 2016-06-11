@@ -1,5 +1,8 @@
 'use strict';
 
+const request = require('request');
+
+
 module.exports = function routesFunc (app, passport) {
 
 
@@ -53,6 +56,27 @@ module.exports = function routesFunc (app, passport) {
         });
     });
 
+    /**
+     * Test call route
+     */
+    
+    app.get('/data', (req, res) => {
+        const options = {
+            url: 'https://www.googleapis.com/calendar/v3/users/me/calendarList',
+            headers: {
+                Authorization: 'Bearer ' + req.user.google.token
+            }
+        };
+
+        request(options, (err, response, body) => {
+            if(err) console.error(err);
+
+            console.log(body);
+            res.end('all good');
+        })
+
+    });
+
 
     /**
      * Logout page
@@ -98,7 +122,7 @@ module.exports = function routesFunc (app, passport) {
     /**
      * Google Auth routes
      */
-    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email', 'https://www.googleapis.com/auth/calendar'], accessType: 'offline' }));
 
     // the callback after google has authenticated the user
     app.get('/auth/google/callback',passport.authenticate('google', {
