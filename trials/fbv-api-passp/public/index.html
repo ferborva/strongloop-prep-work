@@ -38,33 +38,70 @@
 					
 					<h5>API controls</h5>
 					<hr>
+			
+					<!-- Section container with user login controls -->
+					<section id="user-login-controls">
 
-					<a class="waves-effect waves-light btn purple full-width" onclick="myApp.verifyApi()">
-						<i class="material-icons left">cloud</i>
-						Verify API
-					</a>
+						<a class="waves-effect waves-light btn purple full-width" onclick="myApp.verifyApi()">
+							<i class="material-icons left">cloud</i>
+							Verify API
+						</a>
 
-					<br>
-					<br>
-
-					<form action="javascript:myApp.newUser()">
-						<h6> sreate new User </h6>
-						<div class="input-field">
-				          	<i class="material-icons prefix">account_circle</i>
-				          	<input id="form-email" name="form-email" type="email" class="validate" required>
-				          	<label for="form-email" data-error="Must be a valid email">Email</label>
-				        </div>
-				        <br>
-				        <div class="input-field">
-				          	<i class="material-icons prefix">lock</i>
-				          	<input id="form-password" name="form-password" type="password" class="validate" required>
-				          	<label for="form-password">Password</label>
-				        </div>
 						<br>
-				        <button class="btn waves-effect waves-light purple full-width" type="submit">
-				        	<i class="material-icons left">send</i>Create user
-				        </button>
-					</form>
+						<br>
+
+						<form action="javascript:myApp.newUser()">
+							<h5> Create new User </h5>
+							<div class="input-field">
+					          	<i class="material-icons prefix">account_circle</i>
+					          	<input id="form-email" name="form-email" type="email" class="validate" required>
+					          	<label for="form-email" data-error="Must be a valid email">Email</label>
+					        </div>
+					        <br>
+					        <div class="input-field">
+					          	<i class="material-icons prefix">lock</i>
+					          	<input id="form-password" name="form-password" type="password" class="validate" required>
+					          	<label for="form-password">Password</label>
+					        </div>
+							<br>
+					        <button class="btn waves-effect waves-light purple full-width" type="submit">
+					        	<i class="material-icons left">send</i>Create user
+					        </button>
+						</form>
+
+
+						<br>
+						<br>
+
+						<form action="javascript:myApp.authenticateUser()">
+							<h5> Authentication Local </h5>
+							<div class="input-field">
+					          	<i class="material-icons prefix">account_circle</i>
+					          	<input id="login-email" name="form-email" type="email" class="validate" required>
+					          	<label for="login-email" data-error="Must be a valid email">Email</label>
+					        </div>
+					        <br>
+					        <div class="input-field">
+					          	<i class="material-icons prefix">lock</i>
+					          	<input id="login-password" name="form-password" type="password" class="validate" required>
+					          	<label for="login-password">Password</label>
+					        </div>
+							<br>
+					        <button class="btn waves-effect waves-light purple full-width" type="submit">
+					        	<i class="material-icons left">send</i>Login
+					        </button>
+						</form>
+
+					</section>
+
+					<!-- Section container for API Call Buttons and forms -->
+					<section id="api-control-block" class="hide">
+						
+						<a class="waves-effect waves-light btn purple full-width" onclick="myApp.getProfileData()">
+							<i class="material-icons left">cloud</i>
+							Get Profile Data
+						</a>
+					</section>
 					
 				</div>
 				

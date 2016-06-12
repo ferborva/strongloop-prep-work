@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Configure Passport
-passportConfig(passport);
+passportConfig(passport, app);
 app.use(passport.initialize());
 
 // Setup static file access

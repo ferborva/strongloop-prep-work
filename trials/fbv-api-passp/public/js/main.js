@@ -62,6 +62,63 @@ myApp.newUser = function newUser () {
 };
 
 
+myApp.authenticateUser = function newUser () {
+
+	const userFormData = {
+		'form-email': $('#login-email')[0].value,
+		'form-password': $('#login-password')[0].value
+	}
+
+	const options = {
+		method: 'POST',
+		data: userFormData
+	}
+
+	$.ajax('/api/auth', options).then((data) => {
+		const jsonData = JSON.parse(data);
+		if (jsonData.token) {
+			console.log('I have received a token')
+			myApp.token = jsonData.token;
+			$('#user-login-controls').addClass('hide');
+			$('#api-control-block').removeClass('hide');
+		}
+		myApp.panelJsonDump(data);
+		myApp.panelBlock();
+	}, (err) => {
+		myApp.panelAdd(err);
+		myApp.panelBlock();
+	}).always(() => {
+		// Abstract
+	});
+};
+
+
+// API Calls
+
+/**
+ * Get User Profile Data Call
+ */
+myApp.getProfileData = function newUser () {
+
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-Access-Token': myApp.token
+		}
+	}
+
+	$.ajax('/api/getProfileData', options).then((data) => {
+		myApp.panelJsonDump(data);
+		myApp.panelBlock();
+	}, (err) => {
+		myApp.panelAdd(err);
+		myApp.panelBlock();
+	}).always(() => {
+		// Abstract
+	});
+};
+
+
 // Panel Util Funtions
 
 myApp.panelAdd = function panelAdd (string) {
