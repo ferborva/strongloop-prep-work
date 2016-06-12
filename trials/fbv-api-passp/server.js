@@ -24,7 +24,6 @@ mongoose.connect(databaseConf.url);
 
 const serverPort = process.env.PORT || 3000;
 
-
 // Setup general use middleware
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -36,6 +35,9 @@ app.use(passport.initialize());
 
 // Setup static file access
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('views', __dirname + '/app/views');
+app.set('view engine', 'ejs');
 
 // Setup routes
 

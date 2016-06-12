@@ -1,0 +1,23 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        <title>Single Page Application Authentication - Auth Success</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    </head>  
+    <body>  
+    <script type="text/javascript">  
+        if (window.opener) {
+            window.opener.focus();
+
+            var state = '<%= state %>';
+            var user = <%- JSON.stringify(user) %>;
+            var token = '<%= token %>';
+
+            window.opener.externalAuthManager(state, user, token);
+
+        }
+        window.close();
+    </script>  
+    </body>  
+</html>

@@ -37,6 +37,14 @@ const userSchema = mongoose.Schema({
 		email: String,
 		name: String,
 		fullProfile: Object
+	},
+
+	github: {
+		id: String,
+		displayName: String,
+		photo: String,
+		profileUrl: String,
+		fullProfile: Object
 	}
 
 });

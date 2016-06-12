@@ -54,6 +54,29 @@ module.exports = function routeSetup (app, passport) {
 	);
 
 	/**
+	 * Github Auth Routes
+	 */
+	apiRoutes.get('/githubAuth',
+		passport.authenticate('github'));
+
+	apiRoutes.get('/githubAuth/callback',
+		passport.authenticate('github', { session: false, failureRedirect: '/api/auth/failure' }),
+		(req, res) => {
+			console.log(req.user);
+			console.log(req.token);
+			res.render('after-auth', {
+				state: 'success',
+				user: req.user ? req.user : null,
+				token: req.token
+			});
+		}
+	);
+
+    app.get('/auth/failure', function(req, res) {
+        res.render('after-auth', { state: 'failure', user: null, token: 'none' });
+    });
+
+	/**
 	 * Authentication middleware (AWESOMEEE!!)
 	 */
 	apiRoutes.use((req, res, next) => {
@@ -70,8 +93,6 @@ module.exports = function routeSetup (app, passport) {
 					return res.end(JSON.stringify(wrongTokenAnswer));
 				} else {
 					req.decoded = decodedToken;
-					console.log('Decoded Token');
-					console.log(decodedToken);
 					next();
 				}
 			})
@@ -88,7 +109,7 @@ module.exports = function routeSetup (app, passport) {
 	 * Protected Route
 	 */
 	apiRoutes.get('/getProfileData', (req, res) => {
-		res.end(JSON.stringify(req.decoded._doc));
+		res.end(JSON.stringify(req.decoded));
 	});
 
 	app.use('/api', apiRoutes);

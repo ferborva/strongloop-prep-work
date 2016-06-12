@@ -3,6 +3,20 @@
 const myApp = {};
 
 
+function externalAuthManager (state, user, token) {
+	const externalAuth = {
+		success: state === 'success' ? true : false,
+		user,
+		token
+	};
+	if (externalAuth.token) {
+		myApp.token = externalAuth.token;
+		$('#user-login-controls').addClass('hide');
+		$('#api-control-block').removeClass('hide');
+	}
+	myApp.externalAuth = externalAuth;
+};
+
 // DOM Ready and Loaded
 
 $(function() {
@@ -92,6 +106,10 @@ myApp.authenticateUser = function newUser () {
 	});
 };
 
+
+myApp.githubLogin = function githubLogin (){
+	window.open('http://localhost:3000/api/githubAuth', '', 'width=1000,height=800');
+}
 
 // API Calls
 
